@@ -13,7 +13,6 @@ body {
     color: #333;
 }
 
-
 .game-layout {
     display: flex;
     flex-wrap: wrap;
@@ -271,4 +270,150 @@ button[type="submit"]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+}
+
+
+
+
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #576903;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #576903;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+
+.form-login .campo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-login label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-login .input-icono {
+    position: relative;
+}
+
+.form-login .input-icono i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #576903;
+    font-size: 1.2rem;
+}
+
+.form-login input {
+    width: 100%;
+    padding: 12px 12px 12px 40px; 
+    border: 1px solid #7d8b3b;
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: #333;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-login input:focus {
+    outline: none;
+    border-color: #576903;
+    box-shadow: 0 0 5px rgba(87, 105, 3, 0.3);
+}
+
+.form-login input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin-right: 8px;
+}
+
+.form-login .campo label {
+    display: inline;
+}
+
+.form-login .campo label input[type="checkbox"] {
+    display: inline-block;
+}
+
+ones-inicio {
+    margin-top: 30px;
+}
+
+.botones-inicio button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #576903;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botones-inicio button:hover {
+    background-color: #7d8b3b;
+    transform: translateY(-2px);
+}
+
+
+#mensaje-error {
+    color: #F44336 !important;
+    font-size: 0.9rem !important;
+    margin-top: 15px !important;
+    font-weight: bold;
+}
+
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: auto; 
+    padding-top: 20px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: rgba(51, 51, 51, 0.7);
 }

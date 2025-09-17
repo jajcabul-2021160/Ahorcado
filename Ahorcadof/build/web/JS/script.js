@@ -1,23 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
-    const loginContainer = document.getElementById('login-container');
-    const mainContainer = document.getElementById('main-container');
-
-  
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        if (username === 'quintom' && password === 'admin') {
-            loginContainer.style.display = 'none';
-            mainContainer.style.display = 'block';
-            iniciarJuego();
-        } else {
-            alert('Usuario o contraseña incorrectos.');
-        }
-    });
-
     const palabraOculta = document.getElementById('palabra-oculta');
     const imagenAhorcado = document.getElementById('imagen-ahorcado');
     const teclado = document.getElementById('teclado-letras');
@@ -38,14 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let tiempoRestante = 120;
     let temporizadorIntervalo;
+
     
     function manejarTeclado(habilitar) {
-    const botonesTeclado = Array.from(teclado.children);
-    botonesTeclado.forEach(boton => {
-        boton.disabled = !habilitar;
-    });
-}
+        const botonesTeclado = Array.from(teclado.children);
+        botonesTeclado.forEach(boton => {
+            boton.disabled = !habilitar;
+        });
+    }
 
+    
     async function iniciarJuego() {
         try {
             const respuesta = await fetch('./Controlador?accion=obtenerPalabra');
@@ -81,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    
     function crearTeclado() {
         teclado.innerHTML = '';
         const letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -92,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    
     function manejarAdivinanza(letra, boton) {
         boton.disabled = true;
         let acierto = false;
@@ -117,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         verificarEstadoJuego();
     }
 
+   
     function verificarEstadoJuego() {
         if (palabraMostrada === objetoSeleccionado.palabra) {
             mensaje.textContent = '¡Ganaste! 🎉';
@@ -129,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+   
     function iniciarTemporizador() {
         clearInterval(temporizadorIntervalo);
         tiempoRestante = 120;
@@ -152,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Array.from(teclado.children).forEach(b => b.disabled = true);
     }
 
+    
     btnIniciar.addEventListener('click', iniciarJuego);
     btnReiniciar.addEventListener('click', iniciarJuego);
 
@@ -169,7 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    btnSalir.addEventListener('click', () => {
+    btnSalir.addEventListener('click', (e) => {
+        e.preventDefault(); 
         location.reload();
     });
 });

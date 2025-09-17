@@ -1,81 +1,76 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego del Ahorcado</title>
+    <title>Iniciar Sesión - Ahorcado</title>
     <link rel="stylesheet" href="Css/style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
-<body>
 
-    <!-- Login -->
-    <div id="login-container" class="login-container">
-        <h1>Iniciar Sesión</h1>
-        
-        <form id="login-form">
-            <div class="input-group">
-                <label for="username">Ingrese el Nombre del Usuario:</label>
-                <input type="text" id="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Ingrese La Contraseña:</label>
-                <input type="password" id="password" required>
-            </div>
-            <button type="submit">Iniciar El Juego</button>
-        </form>
-    </div>
+<body class="pagina-inicio">
 
-    <!-- Manejo del Juego -->
-    <div id="main-container" class="main-container" style="display: none;">
-        <div class="game-layout">
-            <div class="juego-container">
-                <h1>El Ahorcado</h1>
-                <div class="imagen-container">
-                    <img id="imagen-ahorcado" src="Images/1.png" alt="Imagen del Ahorcado">
+    <header>
+
+    </header>
+
+    <main class="contenido-inicio">
+        <section>
+            <h2>Iniciar Sesión</h2>
+            <form action="Validar" method="POST" class="form-login" autocomplete="off">
+                <!-- Usuario -->
+                <div class="campo">
+                    <label for="usuario">Usuario:</label>
+                    <div class="input-icono">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" id="usuario" name="usuario" required
+                               value="<%= request.getAttribute("usuario") != null ? request.getAttribute("usuario") : ""%>">
+                    </div>
                 </div>
-                <div id="palabra-oculta" class="palabra-oculta"></div>
-                <div id="temporizador" class="temporizador">Tiempo: 02:00</div>
-                <div id="letras-usadas" class="letras-usadas"></div>
-                <div id="teclado-letras" class="teclado-letras"></div>
-                <div class="mensaje" id="mensaje"></div>
-                <div class="controles">
-                    <button id="btn-iniciar">Inicio</button>
-                    <button id="btn-pausar">Pausar</button>
-                    <button id="btn-reiniciar">Reiniciar</button>
-                    <button id="btn-salir">Salir</button>
+
+              
+                <div class="campo">
+                    <label for="contrasena">Contraseña:</label>
+                    <div class="input-icono">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" id="contrasena" name="contrasena" required>
+                    </div>
                 </div>
-            </div>
 
-            <div class="pistas-container">
-                <div id="pistas" class="pistas"></div>
-            </div>
-        </div>
-    </div>
+           
+                <div class="campo">
+                    <label>
+                        <input type="checkbox" onclick="togglePassword()"> Ver contraseña
+                    </label>
+                </div>
 
-    <!-- ruta del Script -->
-    <script src="JS/script.js"></script>
+             
+                <div class="botones-inicio">
+                    <button type="submit" name="accion" value="Ingresar">Entrar</button>
+                </div>
 
-    <!-- Script para controlar login -->
+             
+                <% if (request.getAttribute("error") != null) { %>
+                    <div id="mensaje-error" style="color:red; font-size:14px; margin-top: 10px;">
+                        <%= request.getAttribute("error") %>
+                    </div>
+                <% } %>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Ahorcado Jose Ajcabul</p>
+    </footer>
+
     <script>
-        const loginForm = document.getElementById("login-form");
-        const loginContainer = document.getElementById("login-container");
-        const mainContainer = document.getElementById("main-container");
-
-        loginForm.addEventListener("submit", function(event) {
-            event.preventDefault(); 
-
-          
-            const user = document.getElementById("username").value;
-            const pass = document.getElementById("password").value;
-
-            if(user.trim() !== "" && pass.trim() !== "") {
-                loginContainer.style.display = "none"; // Oculta el login
-                mainContainer.style.display = "block"; // Muestra el juego
-            } else {
-                alert("Por favor, ingresa tus credenciales.");
-            }
-        });
+     
+        function togglePassword() {
+            let input = document.getElementById("contrasena");
+            input.type = input.type === "password" ? "text" : "password";
+        }
     </script>
 </body>
+
 </html>
