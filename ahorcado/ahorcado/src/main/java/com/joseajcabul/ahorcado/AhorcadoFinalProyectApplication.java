@@ -13,6 +13,6 @@ public class AhorcadoFinalProyectApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("funcionando api "); // api funcionando
+		System.out.println("funcionando api ");
 	}
 }
