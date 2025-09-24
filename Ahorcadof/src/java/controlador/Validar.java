@@ -27,7 +27,7 @@ public class Validar extends HttpServlet {
             String contrasena = request.getParameter("contrasena");
             Usuario usuario = usuarioDao.validar(correo, contrasena);
 
-            if (usuario != null && usuario.getCorreoUsuario() != null) {
+            if (usuario != null && usuario.getCorreo_Usuario() != null) {
                 request.getSession().setAttribute("usuario", usuario);
                 request.getRequestDispatcher("inicio.jsp").forward(request, response);
             } else {

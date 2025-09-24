@@ -6,48 +6,48 @@ package modelo;
 
 public class Usuario {
 
-    private int codigoUsuario;
-    private String correoUsuario;
-    private String contraseñaUsuario;
+    private int codigo_Usuario;
+    private String correo_Usuario;
+    private String contraseña_Usuario;
 
     public Usuario() {
     }
 
-    public Usuario(int codigoUsuario, String correoUsuario, String contraseñaUsuario) {
-        this.codigoUsuario = codigoUsuario;
-        this.correoUsuario = correoUsuario;
-        this.contraseñaUsuario = contraseñaUsuario;
+    public Usuario(int codigo_Usuario, String correo_Usuario, String contraseña_Usuario) {
+        this.codigo_Usuario = codigo_Usuario;
+        this.correo_Usuario = correo_Usuario;
+        this.contraseña_Usuario = contraseña_Usuario;
     }
 
-    public int getCodigoUsuario() {
-        return codigoUsuario;
+    public int getCodigo_Usuario() {
+        return codigo_Usuario;
     }
 
-    public void setCodigoUsuario(int codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
+    public void setCodigo_Usuario(int codigo_Usuario) {
+        this.codigo_Usuario = codigo_Usuario;
     }
 
-    public String getCorreoUsuario() {
-        return correoUsuario;
+    public String getCorreo_Usuario() {
+        return correo_Usuario;
     }
 
-    public void setCorreoUsuario(String correoUsuario) {
-        this.correoUsuario = correoUsuario;
+    public void setCorreo_Usuario(String correo_Usuario) {
+        this.correo_Usuario = correo_Usuario;
     }
 
-    public String getContraseñaUsuario() {
-        return contraseñaUsuario;
+    public String getContraseña_Usuario() {
+        return contraseña_Usuario;
     }
 
-    public void setContraseñaUsuario(String contraseñaUsuario) {
-        this.contraseñaUsuario = contraseñaUsuario;
+    public void setContraseña_Usuario(String contraseña_Usuario) {
+        this.contraseña_Usuario = contraseña_Usuario;
     }
 
     @Override
     public String toString() {
         return "Usuario{" + 
-               "codigoUsuario=" + codigoUsuario + 
-               ", correoUsuario=" + correoUsuario + 
-               ", contraseñaUsuario=" + contraseñaUsuario + '}';
+               "codigo_Usuario=" + codigo_Usuario + 
+               ", correo_Usuario=" + correo_Usuario + 
+               ", contraseña_Usuario=" + contraseña_Usuario + '}';
     }
 }

@@ -14,11 +14,11 @@ public class PalabraDAO {
 
             if (rs.next()) {
                 palabra = new Palabra();
-                palabra.setCodigoPalabra(rs.getInt("codigoPalabra"));
+                palabra.setCodigo_Palabra(rs.getInt("codigo_Palabra"));
                 palabra.setPalabra(rs.getString("palabra"));
-                palabra.setPista1(rs.getString("pista1"));
-                palabra.setPista2(rs.getString("pista2"));
-                palabra.setPista3(rs.getString("pista3"));
+                palabra.setPista_1(rs.getString("pista_1"));
+                palabra.setPista_2(rs.getString("pista_2"));
+                palabra.setPista_3(rs.getString("pista_3"));
             }
         } catch (SQLException e) {
             System.err.println("Error al obtener palabra: " + e.getMessage());

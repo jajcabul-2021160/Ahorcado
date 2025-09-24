@@ -16,19 +16,19 @@ public class UsuarioDAO {
     PreparedStatement ps;
     ResultSet rs;
 
-    public Usuario validar(String correo, String contraseña) {
+    public Usuario validar(String correo_Usuario, String contraseña_Usuario) {
         Usuario usuario = new Usuario();
-        String sql = "SELECT codigoUsuario, correoUsuario, contraseñaUsuario FROM Usuario WHERE correoUsuario = ? AND contraseñaUsuario = ?";
+        String sql = "SELECT codigo_Usuario, correo_Usuario, contraseña_Usuario FROM Usuarios WHERE correo_Usuario = ? AND contraseña_Usuario = ?";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, correo);
-            ps.setString(2, contraseña);
+            ps.setString(1, correo_Usuario);
+            ps.setString(2, contraseña_Usuario);
             rs = ps.executeQuery();
             if (rs.next()) {
-                usuario.setCodigoUsuario(rs.getInt("codigoUsuario"));
-                usuario.setCorreoUsuario(rs.getString("correoUsuario"));
-                usuario.setContraseñaUsuario(rs.getString("contraseñaUsuario"));
+                usuario.setCodigo_Usuario(rs.getInt("codigo_Usuario"));
+                usuario.setCorreo_Usuario(rs.getString("correo_Usuario"));
+                usuario.setContraseña_Usuario(rs.getString("contraseña_Usuario"));
             }
         } catch (Exception e) {
             System.out.println("Error en validar usuario");

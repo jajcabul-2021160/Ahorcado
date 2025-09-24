@@ -7,11 +7,11 @@
     <title>Iniciar Sesión - Ahorcado</title>
     <link rel="stylesheet" href="Css/style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-</head>
-
+</head> 
+   
 <body class="pagina-inicio">
 
-    <header>
+    <header>  
 
     </header>
 

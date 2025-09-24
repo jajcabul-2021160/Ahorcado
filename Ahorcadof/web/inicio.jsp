@@ -21,7 +21,7 @@
     <div class="game-layout">
         <div class="juego-container">
             <h1>El Ahorcado</h1>
-            <p id="bienvenida">Bienvenido, <%= usuario.getCorreoUsuario() %></p>
+            <p id="bienvenida">Bienvenido, <%= usuario.getCorreo_Usuario() %></p>
 
             <div class="imagen-container">
                 <img id="imagen-ahorcado" src="Images/1.png" alt="Imagen del Ahorcado">
